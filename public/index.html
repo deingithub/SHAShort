@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>SHAShort</title>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/intercooler-1.2.2.js"></script>
+	<script src="js/transform.js"></script>
+	<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+	<div id="stage">
+		<h1>The World's First Military Grade Link Shortener</h1>
+		<h2>because your links deserve the best protection…</h2>
+		<p>SHAShort is the first and only URL shortening service to only use <em>cryptographically secure</em> hashing functions in the process of shortening, thereby making it <em>computationally infeasible</em> to reverse-engineer the original URL from the shortened link.</p>
+		<noscript>
+			<p class="noscript">This page requires JavaScript to work because it is a joke.</p>
+		</noscript>
+		<form ic-post-to="/api/web/create" ic-target="#target" ic-replace-target="true" ic-transform-response="return responseToHTML(content)">
+			<input type="url" id="url" placeholder="https://example.com" name="url"><input type="submit" value="Go!">
+		</form>
+		<div id="target"></div>
+	</div>
+</body>
+</html>
