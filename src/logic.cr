@@ -29,8 +29,14 @@ module SHAShortLogic
     hash
   end
 
+  class InvalidHashLengthError < Exception
+    def to_s
+      "Invalid Hash Length"
+    end
+  end
+
   def fetch_link(hash)
-    raise "Invalid Hash Length #{hash.size}" if hash.size != 128
+    raise InvalidHashLengthError.new() if hash.size != 128
     DATABASE.query_one "select url from urlmap where hash = ?", hash, as: String
   end
 end

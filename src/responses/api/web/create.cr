@@ -1,6 +1,6 @@
 require "../../../logic"
 
-module SHAShortFormResultView
+module WebAPICreateEndpoint
   extend self
 
   def render(handler_output)
@@ -19,9 +19,9 @@ end
 post "/api/web/create" do |env|
   begin
     hash = SHAShortLogic.create_link(env.params.body["url"])
-    next SHAShortFormResultView.render(hash)
+    next WebAPICreateEndpoint.render(hash)
   rescue e
     puts e
-    next SHAShortFormResultView.render_error
+    next WebAPICreateEndpoint.render_error
   end
 end
