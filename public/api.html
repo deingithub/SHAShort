@@ -10,11 +10,15 @@
 	<div id="stage">
 		<h1>The World's First Military Grade Link Shortener</h1>
 		<h2>because your links deserve the best protection…</h2>
-		<p>To create a new link using the API, issue a POST request to <code>https://ding.15318.de/api/v0/create</code> with <code>text/plain</code> content containing the only the shortee (your URL). Using <code>curl</code>, this is very easy to accomplish:</p>
-		<pre>curl -X POST https://ding.15318.de/api/v0/create/ -d "https://example.com"</pre>
-		<p>The API responds in well-formed JSON.</p>
-		<p>In case of success, the API returns <code>success</code> in the <code>status</code> field and a <code>hash</code> field that contains the resulting hash you need to append to <code>https://ding.15318.de/resolve/</code> to be redirected to the shortee.</p>
-		<p>In case of errors, the API returns <code>error</code> in the <code>status</code> field and communicates the type of error in the HTTP Status Code: <code>429</code> indicates a rate limit violation, <code>413</code> the shortee being too long to parse, <code>400</code> a general error while parsing the shortee, and <code>500</code> a general internal error.</p>
+		<p>The API always responds in well-formed JSON and uses status codes to efficiently communicate error reasons. Attempting to use an outdated version of the API will return status code 403.</p>
+		<p><b>To create a new link</b> using the API, issue a POST request to <code>https://ding.15318.de/api/v1/create</code> with <code>text/plain</code> content containing the only the shortee (your URL).</p>
+		<pre>$ curl -X POST https://ding.15318.de/api/v1/create/ -d "https://example.com"</pre>
+		<p>In case of success, the API returns <code>ok</code> in the <code>status</code> field and a <code>hash</code> field that contains the resulting hash you need to append to <code>https://ding.15318.de/resolve/</code> to be redirected to the shortee.</p>
+		<p>In case of errors, the API returns <code>error</code> in the <code>status</code> field and communicates the type of error in the HTTP Status Code: 429 indicates a rate limit violation, 413 the shortee being too long to parse, 400 a general error while parsing the shortee, and 500 a general internal error.</p>
+		<p><b>To resolve a link</b> using the API, issue a GET request to <code>https://ding.15318.de/api/v1/resolve?hash=[your_hash]</code>.</p>
+		<pre>$ curl -X POST "https://ding.15318.de/api/v1/resolve/?hash=g0f…991"</pre>
+		<p>In case of success, the API returns <code>ok</code> in the <code>status</code> field and a <code>url</code> field that contains the URL the hash maps to.</p>
+		<p>In case of errors, the API returns <code>error</code> in the <code>status</code> field and communicates the type of error in the HTTP Status Code: 400 indicates that the hash didn't resolve, and 500 a general internal error.</p>
 		<a href="/">« Return to main site</a>
 		<footer>
 			<p>Built with <a href="https://crystal-lang.org">Crystal</a>, <a href="https://kemalcr.com">Kemal</a>, <a href="https://sqlite.org">SQLite</a>, <a href="http://intercoolerjs.org/">Intercooler</a> and <a href="https://ding.15318.de/resolve/0b0222f0a1a27b7229cd83726cbd834dc52c27784e4e3775ca1c06ae71b595033769957eb1997ffd629487fb9a362607b00e738b072a92c56e6c5c3f3e944616">boredom</a> by <a href="https://15318.de">deing</a>.<br/><a href="https://gitlab.com/deing/shashort">May your lords be merciful.</a></p>
