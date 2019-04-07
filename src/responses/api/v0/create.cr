@@ -1,8 +1,8 @@
 require "../../../logic"
 
 post "/api/v0/create" do |env|
-	env.response.content_type = "application/json"
-	url = env.request.body.not_nil!.gets_to_end
+  env.response.content_type = "application/json"
+  url = env.request.body.not_nil!.gets_to_end
   begin
     hash = SHAShortLogic.create_link(url)
     next {status: "success", hash: hash}.to_json

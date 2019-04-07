@@ -8,9 +8,11 @@ module SHAShort
   extend self
   @@last_hash_time = Time.unix(0)
   RATELIMIT = Time::Span.new(0, 0, 1)
+
   def ratelimited?
     Time.now - @@last_hash_time < RATELIMIT
   end
+
   def ratelimit_set_now
     @@last_hash_time = Time.now
   end
