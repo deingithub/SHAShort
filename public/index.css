@@ -26,6 +26,22 @@ p.noscript {
 	text-transform: uppercase;
 	font-weight: bold;
 }
+pre, code {
+	overflow: auto;
+	background-color: #444;
+	color: #fafafa;
+	padding: .1rem;
+	border-radius: 3px;
+}
+
+pre {
+	text-align: left;
+	padding: .3rem;
+}
+p > pre {
+	margin: 0;
+}
+
 form {
 	width:100%;
 	display: flex;

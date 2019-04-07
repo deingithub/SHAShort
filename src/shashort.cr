@@ -25,9 +25,12 @@ require "./responses/resolve"
 get "/" do |env|
   send_file env, "public/index.html"
 end
+get "/api" do |env|
+  send_file env, "public/api.html"
+end
 
 after_all do |env|
-  env.response.headers.add("Content-Security-Policy", "default-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'")
+  env.response.headers.add("Content-Security-Policy", "default-src 'none'; img-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'")
   env.response.headers.add("Strict-Transport-Security", "max-age=63072000")
   env.response.headers.add("X-Frame-Options", "DENY")
 end
