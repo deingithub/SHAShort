@@ -16,13 +16,11 @@
 		<noscript>
 			<p class="noscript">This page requires JavaScript to work because it is a joke.</p>
 		</noscript>
-		<menu>
-			<a href="#create-form" id="create-link">Create a link</a>
-			<a href="#resolve-form" id="resolve-link">Resolve a link</a>
-		</menu>
+		<h3>Create a link</h3>
 		<form ic-post-to="/api/web/create" ic-target="#target" ic-replace-target="true" id="create-form">
 			<input type="url" required id="url" placeholder="https://example.com/" name="url"><input type="submit" value="Go!">
 		</form>
+		<h3>Resolve a link</h3>
 		<form ic-get-from="/api/web/resolve" ic-target="#target" ic-replace-target="true" id="resolve-form">
 			<input type="url" required id="url" placeholder="https://ding.15318.de/resolve/9a0…" name="hash"><input type="submit" value="Go!">
 		</form>
