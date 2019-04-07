@@ -79,7 +79,7 @@ DATABASE = DB.open "sqlite3://./shashort.sqlite3"
 URLREGEX = Regex.new("^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]")
 
 after_all do |env|
-  env.response.headers.add("Content-Security-Policy", "default-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'")
+  env.response.headers.add("Content-Security-Policy", "default-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'")
   env.response.headers.add("Strict-Transport-Security", "max-age=63072000")
   env.response.headers.add("X-Frame-Options", "DENY")
 end
