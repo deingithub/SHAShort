@@ -85,3 +85,6 @@ footer p {
 #target.success {
 	border-top: 3px solid lightgreen;
 }
+#target.error {
+	border-top: 3px solid red;
+}

@@ -4,6 +4,8 @@ require "sqlite3"
 require "sha3"
 require "dotenv"
 
+require "./views/form_result"
+
 module SHAShort
   extend self
   @@last_hash_time = Time.unix(0)
@@ -21,7 +23,8 @@ post "/api/v0/create" do |env|
 end
 
 post "/api/web/create" do |env|
-  handle_create(env.params.body["url"], env)
+  res = handle_create(env.params.body["url"], env)
+  SHAShortFormResultView.render(res)
 end
 
 get "/" do |env|
