@@ -20,8 +20,8 @@ end
 
 require "./responses/api/web/create"
 require "./responses/api/web/resolve"
-require "./responses/api/v0/create"
-require "./responses/api/v0/resolve"
+require "./responses/api/json/create"
+require "./responses/api/json/resolve"
 require "./responses/resolve"
 
 get "/" do |env|
