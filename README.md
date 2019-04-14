@@ -13,7 +13,9 @@ Just navigate to <http://localhost:8001> (by default) to use.
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/shashort/fork>)
+The main codebase is located on https://git.15318.de. You can log in using GitLab or GitHub there.
+
+1. Fork it (<https://git.15318.de/deing/SHAShort/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -21,4 +23,4 @@ Just navigate to <http://localhost:8001> (by default) to use.
 
 ## Contributors
 
-- [deing](https://github.com/your-github-user) - creator and "maintainer"
+- [deing](https://git.15318.de/deing) - creator and "maintainer"
