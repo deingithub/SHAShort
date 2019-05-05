@@ -5,7 +5,7 @@ module WebAPICreateEndpoint
 
   def render(handler_output)
     <<-STR
-			<div id="target" class="success"><p>✔ Successfully shortened</p><a href="/resolve/#{handler_output}">https://ding.15318.de/resolve/#{handler_output[0, 32]}…</a></div>
+			<div id="target" class="success"><p>✔ Successfully shortened</p><a href="/resolve/#{handler_output}">https://shashort.15318.de/resolve/#{handler_output[0, 32]}…</a></div>
 			STR
   end
 
