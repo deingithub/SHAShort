@@ -9,19 +9,19 @@
 	<link rel="stylesheet" href="/index.css">
 </head>
 <body>
-	<div id="stage">
+	<div id="stage" ic-enhance="true">
 		<h1>The World's First Military Grade Link Shortener</h1>
 		<h2>because your links deserve the best protection…</h2>
-		<p>SHAShort is the first and only URL shortening service to only use <em>cryptographically secure</em> hashing functions in the process of shortening, thereby making it <em>computationally infeasible</em> to reverse-engineer the original URL from the shortened link. That isn't something you should care about, but I did it anyway.<br/><a href="/api">We also have an API</a>, because the internet deserves SHA-512'ing URLs as a service.</p>
+		<p>SHAShort is the first and only URL shortening service to only use <em>cryptographically secure</em> hashing functions in the process of shortening, thereby making it <em>computationally infeasible</em> to reverse-engineer the original URL from the shortened link. That isn't something you should care about, but I did it anyway.<br/><a href="https://shashort.15318.de/api">We also have an API</a>, because the internet deserves SHA-512'ing URLs as a service.</p>
 		<noscript>
 			<p class="noscript">This page works better with JavaScript.</p>
 		</noscript>
 		<h3>Create a link</h3>
-		<form ic-post-to="/api/web/create" ic-target="#target" ic-replace-target="true" id="create-form"  action="/api/web/create" method="post">
+		<form ic-target="#target" ic-replace-target="true" id="create-form"  action="/api/web/create" method="post">
 			<input type="url" required id="url" placeholder="https://example.com/" name="url"><input type="submit" value="Go!">
 		</form>
 		<h3>Resolve a link</h3>
-		<form ic-get-from="/api/web/resolve" ic-target="#target" ic-replace-target="true" id="resolve-form" action="/api/web/resolve" method="get">
+		<form ic-target="#target" ic-replace-target="true" id="resolve-form" action="/api/web/resolve" method="get">
 			<input type="url" required id="url" placeholder="https://shashort.15318.de/resolve/9a0…" name="hash"><input type="submit" value="Go!">
 		</form>
 		<div id="target"></div>
