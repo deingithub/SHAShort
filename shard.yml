@@ -11,13 +11,16 @@ targets:
 dependencies:
   kemal:
     github: kemalcr/kemal
+    version: ~> 0.26.0
   sqlite3:
     github: crystal-lang/crystal-sqlite3
+    versior: ~> 0.7.0
   sha3:
     github: OscarBarrett/crystal-sha3
-    version: ~> 0.3
+    version: ~> 0.3.2
   dotenv:
     github: gdotdesign/cr-dotenv
+    version: ~> 0.3.1
 
 crystal: 0.27.2
 

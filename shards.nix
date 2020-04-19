@@ -38,8 +38,8 @@
   sha3 = {
     owner = "OscarBarrett";
     repo = "crystal-sha3";
-    rev = "v0.3.1";
-    sha256 = "1p4p9f9sj1vygx0pqjzzpmiji82b16rakpf070xwnd38fdgy82yx";
+    rev = "v0.3.2";
+    sha256 = "040plis5jrnnjn629bm80hcsmfznw6g176z2qhv6f5xwl24qj4zc";
   };
   sqlite3 = {
     owner = "crystal-lang";
