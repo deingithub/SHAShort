@@ -2,11 +2,11 @@ version: 1.0
 shards:
   db:
     github: crystal-lang/crystal-db
-    version: 0.5.1
+    version: 0.7.0
 
   dotenv:
     github: gdotdesign/cr-dotenv
-    version: 0.2.0
+    version: 0.3.1
 
   exception_page:
     github: crystal-loot/exception_page
@@ -14,7 +14,7 @@ shards:
 
   kemal:
     github: kemalcr/kemal
-    version: 0.25.2
+    version: 0.26.0
 
   kilt:
     github: jeromegn/kilt
@@ -30,5 +30,5 @@ shards:
 
   sqlite3:
     github: crystal-lang/crystal-sqlite3
-    version: 0.10.0
+    version: 0.14.0
 

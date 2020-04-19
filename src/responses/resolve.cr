@@ -1,4 +1,4 @@
-require "../../logic"
+require "../logic"
 
 get "/resolve/:hash" do |env|
   hash = env.params.url["hash"]

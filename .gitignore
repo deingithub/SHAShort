@@ -4,3 +4,5 @@
 /.shards/
 *.dwarf
 shashort.sqlite3
+result
+.env
