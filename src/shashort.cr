@@ -18,6 +18,8 @@ module SHAShort
   end
 end
 
+Dotenv.load!
+
 require "./responses/api/web/create"
 require "./responses/api/web/resolve"
 require "./responses/api/json/create"
@@ -40,5 +42,4 @@ after_all do |env|
   end
 end
 
-Dotenv.load!
 Kemal.run ENV["port"].to_i32
