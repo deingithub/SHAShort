@@ -6,15 +6,15 @@ require "dotenv"
 
 module SHAShort
   extend self
-  @@last_hash_time = Time.unix(0)
+  @@last_hash_time = Time.utc
   RATELIMIT = Time::Span.new(0, 0, 1)
 
   def ratelimited?
-    Time.now - @@last_hash_time < RATELIMIT
+    Time.utc - @@last_hash_time < RATELIMIT
   end
 
   def ratelimit_set_now
-    @@last_hash_time = Time.now
+    @@last_hash_time = Time.utc
   end
 end
 

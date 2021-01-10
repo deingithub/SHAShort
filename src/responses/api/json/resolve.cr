@@ -2,7 +2,7 @@ require "../../../logic"
 
 get "/api/v1/resolve" do |env|
   env.response.content_type = "application/json"
-  hash = URI.unescape(env.params.query["hash"])
+  hash = URI.decode(env.params.query["hash"])
   hash = hash.lchop("https://ding.15318.de/resolve/").strip
   begin
     url = SHAShortLogic.fetch_link(hash)
